@@ -126,8 +126,9 @@ th, td {
 
 #featured-product{
   padding-top: 30px;
-  text-align: center;
+  /* text-align: center; */
   font-size: 20px;
+  margin-left: 20px;
 }
 
 .four-colunm{
