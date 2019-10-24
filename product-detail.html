@@ -5,7 +5,6 @@
     <title>Fluff Stuff</title>
     <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <script type="text/javascript" src = "main.js"></script>
   </head>
   <body>
     <div class="nav-bar">
@@ -13,7 +12,9 @@
     <div class="nav-container">
         <input id="search" type="text" placeholder="Search..">
         <a href="#">Sign in</a>
-        <a href="#">Cart</a>
+        <a href="view-cart.html">Cart
+        <input class="cart-num" type="text" id="number" value="0"/>
+        </a>
         <a href="#">About</a>
     </div>
 </div>
@@ -22,7 +23,9 @@
 
     <!-- Product Picture -->
     <div class="pic-placeholder">
-      <img class="pic-detail" src="assets/product-1.jpg" alt="">
+      <!--<img class="pic-detail" src="assets/product-1.jpg" alt=""> -->
+      <img class="pic-detail" id="image" src="assets/product-1.jpg" alt="image selected by radio buttons"/>
+
     </div>
 
     <!-- Product Options -->
@@ -37,22 +40,22 @@
         <i class="fa fa-caret-down"></i>
       </button>
       <div class="dropdown-detail">
-        <label class="check-container">After-school Special
-          <input type="checkbox" checked="checked">
-          <span class="checkmark"></span>
-        </label>
-        <label class="check-container">Morning Haze
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="check-container">Denim
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="check-container">Rainey Day
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
+        <div class="check-container">
+          <input type="radio" name="selectPicture" value="assets/product-1.jpg"/>
+          After-school Special
+      </div>
+      <div class="check-container">
+        <input type="radio" name="selectPicture" value="assets/product-1-gray.jpg" checked/>
+        Morning Haze
+      </div>
+      <div class="check-container">
+        <input type="radio" name="selectPicture" value="assets/product-1-green.jpg" checked/>
+        Denim
+      </div>
+      <div class="check-container">
+        <input type="radio" name="selectPicture" value="assets/product-1-blue.jpg" checked/>
+        Rainey Day
+      </div>
       </div>
     </div>
         </div>
@@ -62,21 +65,17 @@
       <button class="dropdown-btn">Select Fill
       </button>
       <div class="dropdown-detail">
-        <label class="check-container">Duck Down
-          <input type="checkbox" checked="checked">
-          <span class="checkmark"></span>
+        <label class="check-container">
+          <input type="radio" checked="checked">
+          <span class="checkmark"></span>Duck Down
         </label>
-        <label class="check-container">Hypoallergenic Poly-blend
-          <input type="checkbox">
-          <span class="checkmark"></span>
+        <label class="check-container">
+          <input type="radio">
+          <span class="checkmark"></span>Hypoallergenic Poly-blend
         </label>
-        <label class="check-container">Denim
-          <input type="checkbox">
-          <span class="checkmark"></span>
-        </label>
-        <label class="check-container">Memory Foam
-          <input type="checkbox">
-          <span class="checkmark"></span>
+        <label class="check-container">
+          <input type="radio">
+          <span class="checkmark"></span>Memory Foam
         </label>
       </div>
     </div>
@@ -93,13 +92,12 @@
     </div>
 
     <div class="add-to-cart">
-      <div class="">
-      <button class="dropdown-btn cart">ADD TO CART
-      </div>
+      <button onclick="incrementValue()" class="dropdown-btn cart">ADD TO CART
       </button>
     </div>
       </div>
       </div>
-
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
